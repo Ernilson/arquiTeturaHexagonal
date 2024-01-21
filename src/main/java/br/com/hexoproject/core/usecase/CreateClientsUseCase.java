@@ -1,10 +1,11 @@
 package br.com.hexoproject.core.usecase;
 
 import br.com.hexoproject.core.domian.Clients;
+import br.com.hexoproject.ports.input.CreateClientsInputPort;
 import br.com.hexoproject.ports.output.CreateClientsOutPutPort;
 import br.com.hexoproject.ports.output.FindAddressZipCodeOutPutPort;
 
-public class CreateClientsUseCase {
+public class CreateClientsUseCase implements CreateClientsInputPort {
 
     private final FindAddressZipCodeOutPutPort findAddressZipCodeOutPutPort;
     private final CreateClientsOutPutPort createClientsOutPutPort;
@@ -14,6 +15,7 @@ public class CreateClientsUseCase {
         this.findAddressZipCodeOutPutPort = findAddressZipCodeOutPutPort;
         this.createClientsOutPutPort = createClientsOutPutPort;
     }
+    @Override
     public void creatClient(Clients clients, String zipCode){
         var address = findAddressZipCodeOutPutPort.find(zipCode);
         clients.setAddress(address);
