@@ -3,8 +3,10 @@ package br.com.hexoproject.adapters.input.controller;
 import br.com.hexoproject.adapters.input.controller.mapper.ClientMapper;
 import br.com.hexoproject.adapters.input.controller.request.ClientRequest;
 import br.com.hexoproject.adapters.input.controller.response.ClientsResponse;
+import br.com.hexoproject.core.domian.Clients;
 import br.com.hexoproject.ports.input.CreateClientsInputPort;
 import br.com.hexoproject.ports.input.FindClientsByIdInputPort;
+import br.com.hexoproject.ports.input.UpdateClientsInputPort;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,11 +21,15 @@ public class ClientsController {
 
     private final FindClientsByIdInputPort findClientsByIdInputPort;
 
+    private final UpdateClientsInputPort updateClientsInputPort;
+
     public ClientsController(CreateClientsInputPort createClientsInputPort,
-                             ClientMapper clientMapper, FindClientsByIdInputPort findClientsByIdInputPort){
+                             ClientMapper clientMapper, FindClientsByIdInputPort findClientsByIdInputPort,
+                             UpdateClientsInputPort updateClientsInputPort){
         this.createClientsInputPort = createClientsInputPort;
         this.clientMapper = clientMapper;
         this.findClientsByIdInputPort = findClientsByIdInputPort;
+        this.updateClientsInputPort = updateClientsInputPort;
     }
     @PostMapping
     public ResponseEntity<Void> create(@Valid @RequestBody ClientRequest request){
@@ -36,5 +42,13 @@ public class ClientsController {
         var clients = findClientsByIdInputPort.find(id);
         var clientResponse = clientMapper.toClientResponse(clients);
         return ResponseEntity.ok().body(clientResponse);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Void> update(@PathVariable final String id, @Valid @RequestBody ClientRequest clientRequest){
+        Clients clients = clientMapper.toClients(clientRequest);
+        clients.setId(id);
+        updateClientsInputPort.update(clients, clientRequest.getZipCode());
+        return ResponseEntity.noContent().build();
     }
 }
