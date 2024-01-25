@@ -1,10 +1,10 @@
-package br.com.hexoproject.core.usecase;
+package br.com.hexoproject.application.core.usecase;
 
-import br.com.hexoproject.core.domian.Clients;
-import br.com.hexoproject.ports.input.FindClientsByIdInputPort;
-import br.com.hexoproject.ports.input.UpdateClientsInputPort;
-import br.com.hexoproject.ports.output.FindAddressZipCodeOutPutPort;
-import br.com.hexoproject.ports.output.UpdateClientOutPutPort;
+import br.com.hexoproject.application.core.domian.Clients;
+import br.com.hexoproject.application.ports.input.FindClientsByIdInputPort;
+import br.com.hexoproject.application.ports.input.UpdateClientsInputPort;
+import br.com.hexoproject.application.ports.output.FindAddressZipCodeOutPutPort;
+import br.com.hexoproject.application.ports.output.UpdateClientOutPutPort;
 
 public class UpdateClientUseCase implements UpdateClientsInputPort {
 

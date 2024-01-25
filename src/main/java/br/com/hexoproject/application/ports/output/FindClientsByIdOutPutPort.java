@@ -1,6 +1,6 @@
-package br.com.hexoproject.ports.output;
+package br.com.hexoproject.application.ports.output;
 
-import br.com.hexoproject.core.domian.Clients;
+import br.com.hexoproject.application.core.domian.Clients;
 
 import java.util.Optional;
 

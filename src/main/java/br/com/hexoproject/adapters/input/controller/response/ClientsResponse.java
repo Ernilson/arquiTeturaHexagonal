@@ -1,6 +1,6 @@
 package br.com.hexoproject.adapters.input.controller.response;
 
-import br.com.hexoproject.core.domian.Address;
+import br.com.hexoproject.application.core.domian.Address;
 import lombok.Data;
 
 @Data

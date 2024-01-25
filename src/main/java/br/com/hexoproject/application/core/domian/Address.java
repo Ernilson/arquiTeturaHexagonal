@@ -1,4 +1,4 @@
-package br.com.hexoproject.core.domian;
+package br.com.hexoproject.application.core.domian;
 
 public class Address {
 

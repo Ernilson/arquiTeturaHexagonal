@@ -2,8 +2,8 @@ package br.com.hexoproject.adapters.output;
 
 import br.com.hexoproject.adapters.output.repository.ClientRepository;
 import br.com.hexoproject.adapters.output.repository.mapper.ClientEntityMapper;
-import br.com.hexoproject.core.domian.Clients;
-import br.com.hexoproject.ports.output.FindClientsByIdOutPutPort;
+import br.com.hexoproject.application.core.domian.Clients;
+import br.com.hexoproject.application.ports.output.FindClientsByIdOutPutPort;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;

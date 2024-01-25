@@ -2,7 +2,7 @@ package br.com.hexoproject.adapters.input.controller.mapper;
 
 import br.com.hexoproject.adapters.input.controller.request.ClientRequest;
 import br.com.hexoproject.adapters.input.controller.response.ClientsResponse;
-import br.com.hexoproject.core.domian.Clients;
+import br.com.hexoproject.application.core.domian.Clients;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

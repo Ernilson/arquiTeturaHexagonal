@@ -2,8 +2,8 @@ package br.com.hexoproject.adapters.output;
 
 import br.com.hexoproject.adapters.output.client.FindAddressByZipCodeClient;
 import br.com.hexoproject.adapters.output.client.mapper.AddressResponseMapper;
-import br.com.hexoproject.core.domian.Address;
-import br.com.hexoproject.ports.output.FindAddressZipCodeOutPutPort;
+import br.com.hexoproject.application.core.domian.Address;
+import br.com.hexoproject.application.ports.output.FindAddressZipCodeOutPutPort;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -1,6 +1,6 @@
 package br.com.hexoproject.adapters.output.repository.entity;
 
-import br.com.hexoproject.core.domian.Address;
+import br.com.hexoproject.application.core.domian.Address;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

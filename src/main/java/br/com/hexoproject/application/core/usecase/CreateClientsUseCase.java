@@ -1,9 +1,9 @@
-package br.com.hexoproject.core.usecase;
+package br.com.hexoproject.application.core.usecase;
 
-import br.com.hexoproject.core.domian.Clients;
-import br.com.hexoproject.ports.input.CreateClientsInputPort;
-import br.com.hexoproject.ports.output.CreateClientsOutPutPort;
-import br.com.hexoproject.ports.output.FindAddressZipCodeOutPutPort;
+import br.com.hexoproject.application.core.domian.Clients;
+import br.com.hexoproject.application.ports.input.CreateClientsInputPort;
+import br.com.hexoproject.application.ports.output.CreateClientsOutPutPort;
+import br.com.hexoproject.application.ports.output.FindAddressZipCodeOutPutPort;
 
 public class CreateClientsUseCase implements CreateClientsInputPort {
 
