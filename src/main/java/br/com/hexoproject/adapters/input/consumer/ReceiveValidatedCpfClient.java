@@ -18,7 +18,6 @@ public class ReceiveValidatedCpfClient {
     @KafkaListener(topics = "tc-cpf-validated", groupId = "test")
     public void receive(ClientMessage clientMessage){
         var client = clientMessageMapper.toclients(clientMessage);
-
         updateClientsInputPort.update(client, clientMessage.getZipCode());
 
     }
